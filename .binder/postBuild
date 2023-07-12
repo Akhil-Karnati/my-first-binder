@@ -1,12 +1,3 @@
 #!/bin/bash
-set -ex
+set -e
 
-# invoke r --env-name=notebook
-invoke demofiles
-invoke talk -t demo
-
-
-# Setup a workspace
-# - activate the environment otherwise the workspace is imported
-#   in the user home folder rather than in the prefix path (new default)
-conda run -n notebook jupyter lab workspaces import .binder/workspace.json
